@@ -29,6 +29,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
    Route::get('news/delete',
    'Admin\NewsController@delete');
 });
+Route::get('/', 'NewsController@index');
 
 //課題
 Route::get('XXX',
@@ -45,6 +46,8 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
    'Admin\ProfileController@update');
    
 });
+Route::get('/profile',
+'ProfileController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -52,4 +55,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 
